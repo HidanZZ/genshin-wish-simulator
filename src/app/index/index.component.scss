@@ -1,0 +1,66 @@
+
+:host ::ng-deep {
+  .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
+    height: 3rem !important;
+    width: 3rem !important;
+  }
+
+  .pi {
+    font-size: 2rem;
+  }
+
+  .p-carousel .p-carousel-content .p-carousel-prev:enabled:hover, .p-carousel .p-carousel-content .p-carousel-next:enabled:hover {
+    background: white;
+  }
+
+  .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
+    color: #414141;
+  }
+}
+
+.custom-btn{
+  z-index: 99999;
+  background-image: url(
+  'src/assets/btnWish1.png');
+  background-size: cover;
+  width: 344px;
+  height: 78px;
+  border: none;
+  background-color: transparent;
+}
+.custom-btn10{
+  z-index: 99999;
+  background-image: url(
+  'src/assets/btnWish10.png');
+  background-size: cover;
+  width: 344px;
+  height: 78px;
+  border: none;
+  background-color: transparent;
+}
+button:focus{
+  outline: none;
+}
+.character-rarity {
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+}
+.rarity {
+  width: 20px;
+}
+.child{
+  margin-left: -10px;
+}
+.star4{
+  background-color: #803e8e;
+}
+.star5{
+  background-color: goldenrod;
+}
+.star3{
+  background-color: #00a5dd;
+}

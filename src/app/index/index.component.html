@@ -1,0 +1,48 @@
+<div class="d-flex flex-column">
+  <div style="height: 85vh;padding: 30px">
+    <p-carousel class="center" [value]="banners" [numVisible]="1" [numScroll]="1" [circular]="true"
+                (onPage)="test($event)">
+
+      <ng-template let-banner pTemplate="item">
+        <div class="product-item" >
+          <img style="display:block;
+    margin:auto;box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.88);" [src]="banner.image" class="mb-3"  [alt]="banner.name">
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div style="height: 15vh">
+    <div class="d-flex justify-content-end">
+      <button class="custom-btn m-3 " (click)="single()"></button>
+      <button class="custom-btn10 m-3 " (click)="multi()"></button>
+    </div>
+  </div>
+</div>
+<p-dialog [(visible)]="displayModal" [modal]="true" [style]="{minWidth: '15vw'}" [baseZIndex]="10000"
+          [draggable]="false" [resizable]="false">
+  <div *ngIf="response" class="d-flex justify-content-center">
+    <div *ngFor="let r of response.result" class="m-2"  >
+    <img style="max-width: 106px;max-height: 106px;border-radius: 10px" [class.star4]="r.stars==4" [class.star5]="r.stars==5" [class.star3]="r.stars==3" [src]="r.image"  [alt]="r.name">
+
+    <div class="character-rarity">
+      <img class="rarity" src="https://rerollcdn.com/SDSGC/ui/skill_star.png"  alt="Skill Star">
+                                       <img class="rarity child" *ngFor="let n of randomArray(+r.stars-1)"
+                                                             src="https://rerollcdn.com/SDSGC/ui/skill_star.png"
+                                                             alt="Skill Star">
+    </div>
+    </div>
+  </div>
+
+
+</p-dialog>
+<!--<p-button label="Change" (onClick)="change()" style="margin-right: 5px"></p-button>-->
+<!--<p-button label="1 Pull" (onClick)="single()"></p-button>-->
+<!--<p-button label="10 Pulls" (onClick)="multi()" class="ml-2"></p-button>-->
+
+<!--<div *ngIf="response">-->
+<!--  <ul>-->
+<!--    <li *ngFor="let r of response.result"-->
+<!--        [style]="r.stars>3?{'background-color':'purple'}:''">{{r.name + "  " + r.stars + "*"}}</li>-->
+<!--  </ul>-->
+<!--</div>-->
+
